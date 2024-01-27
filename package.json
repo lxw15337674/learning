@@ -1,0 +1,33 @@
+{
+  "name": "monorepo",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "pixi:dev": "pnpm --filter react-pixi dev"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.3",
+    "autoprefixer": "^10.4.8",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.56.0",
+    "gh-pages": "^4.0.0",
+    "git-cz": "^4.9.0",
+    "lint-staged": "^13.0.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,json}": [
+      "eslint . --fix"
+    ],
+    "*.ts?(x)": [
+      "eslint . --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
+}
